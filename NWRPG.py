@@ -38,6 +38,7 @@ def calculateStatus(request, bonus):
         taijutsu = (forca * 0.2) + (destreza * 0.1)
         ninjutsu = (chakra * 0.2) + (destreza * 0.1)
         kenjutsu = (destreza * 0.2)
+        stamina = (forca * 1.2) + (chakra * 1.2)
 
         # Aplicar bônus
         vida *= 1 + (bonus.get('vida', 0) / 100)
@@ -53,7 +54,8 @@ def calculateStatus(request, bonus):
             '📌 Velocidade': rounding(speed),
             '📌 Ninjutsu': rounding(ninjutsu),
             '📌 Taijutsu': rounding(taijutsu),
-            '📌 Kenjutsu': rounding(kenjutsu)
+            '📌 Kenjutsu': rounding(kenjutsu),
+            '📌 Stamina': rounding(stamina)
         }
     except Exception as e:
         return {'error': str(e)}
