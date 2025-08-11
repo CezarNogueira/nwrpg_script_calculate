@@ -32,7 +32,7 @@ def calculateStatus(request, bonus):
         chakra = request.get('chakra')
         destreza = request.get('destreza')
 
-        vida = (forca * 0.75) + (chakra * 0.4) + (destreza * 0.5)
+        vida = (forca * 0.75) + (chakra * 0.6) + (destreza * 0.5)
         chakra_result = (chakra * 0.5)
         speed = (destreza * 0.1)
         taijutsu = (forca * 0.2) + (destreza * 0.1)
@@ -40,7 +40,7 @@ def calculateStatus(request, bonus):
         kenjutsu = (destreza * 0.2)
         stamina = (forca * 1.2) + (chakra * 1.2)
 
-        # Aplicar bônus
+        # Aplicar bônus de clã
         vida *= 1 + (bonus.get('vida', 0) / 100)
         chakra_result *= 1 + (bonus.get('chakra', 0) / 100)
         speed *= 1 + (bonus.get('speed', 0) / 100)
